@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentSimulator.ConsoleApp", "TournamentSimulator.ConsoleApp\TournamentSimulator.ConsoleApp.csproj", "{C6961990-9C1F-4D11-90A0-7AC317A31253}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{55DC99D7-C2A8-419A-946A-837EE6B1D5FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F7D736BA-05DA-4B65-AB15-D71775CF721E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentSimulator.UnitTests", "TournamentSimulator.UnitTests\TournamentSimulator.UnitTests.csproj", "{190D58B9-389B-4A35-89F4-2ED9CC5DC166}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentSimulator.Core", "TournamentSimulator.Core\TournamentSimulator.Core.csproj", "{5103884C-E1FE-4475-B3B0-6B87CFC8BBDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentSimulator.Api", "TournamentSimulator.Api\TournamentSimulator.Api.csproj", "{F74CD1E9-3E42-4DC7-A8C7-7D3482FD3259}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6961990-9C1F-4D11-90A0-7AC317A31253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6961990-9C1F-4D11-90A0-7AC317A31253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6961990-9C1F-4D11-90A0-7AC317A31253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6961990-9C1F-4D11-90A0-7AC317A31253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190D58B9-389B-4A35-89F4-2ED9CC5DC166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190D58B9-389B-4A35-89F4-2ED9CC5DC166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190D58B9-389B-4A35-89F4-2ED9CC5DC166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190D58B9-389B-4A35-89F4-2ED9CC5DC166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5103884C-E1FE-4475-B3B0-6B87CFC8BBDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5103884C-E1FE-4475-B3B0-6B87CFC8BBDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5103884C-E1FE-4475-B3B0-6B87CFC8BBDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5103884C-E1FE-4475-B3B0-6B87CFC8BBDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F74CD1E9-3E42-4DC7-A8C7-7D3482FD3259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74CD1E9-3E42-4DC7-A8C7-7D3482FD3259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74CD1E9-3E42-4DC7-A8C7-7D3482FD3259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74CD1E9-3E42-4DC7-A8C7-7D3482FD3259}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6961990-9C1F-4D11-90A0-7AC317A31253} = {55DC99D7-C2A8-419A-946A-837EE6B1D5FA}
+		{190D58B9-389B-4A35-89F4-2ED9CC5DC166} = {F7D736BA-05DA-4B65-AB15-D71775CF721E}
+		{5103884C-E1FE-4475-B3B0-6B87CFC8BBDF} = {55DC99D7-C2A8-419A-946A-837EE6B1D5FA}
+		{F74CD1E9-3E42-4DC7-A8C7-7D3482FD3259} = {55DC99D7-C2A8-419A-946A-837EE6B1D5FA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44A2D2ED-7FC9-4465-B45A-FF4A2423D085}
+	EndGlobalSection
+EndGlobal

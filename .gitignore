@@ -1,0 +1,13 @@
+
+TournamentSimulator.Api/bin/
+TournamentSimulator.Api/obj/
+
+
+TournamentSimulator.Core/bin/
+TournamentSimulator.Core/obj/
+
+TournamentSimulator.UnitTests/bin/
+TournamentSimulator.UnitTests/obj/
+
+TournamentSimulator.ConsoleApp/bin/
+TournamentSimulator.ConsoleApp/obj/
