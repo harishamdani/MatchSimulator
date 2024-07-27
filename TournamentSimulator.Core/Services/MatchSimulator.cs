@@ -6,11 +6,13 @@ namespace TournamentSimulator.Core.Services;
 public class MatchSimulator : IMatchSimulator
 {
     private readonly Random _random = new();
+    private const double HomeAdvantage = 1.2; // 20% advantage for home team
+    private const double AwayDisadvantage = 0.9; // 10% disadvantage for away team
 
     public Match SimulateMatch(Team homeTeam, Team awayTeam)
     {
-        var homeGoals = SimulateGoals(homeTeam.Strength);
-        var awayGoals = SimulateGoals(awayTeam.Strength);
+        var homeGoals = SimulateGoals(homeTeam.Strength, true);
+        var awayGoals = SimulateGoals(awayTeam.Strength, false);
 
         return new Match(homeTeam, awayTeam, homeGoals, awayGoals, 0);
     }
@@ -20,11 +22,13 @@ public class MatchSimulator : IMatchSimulator
             .Select(match => SimulateMatch(match.HomeTeam, match.AwayTeam))
             .ToList();
 
-    private int SimulateGoals(int teamStrength)
+    private int SimulateGoals(int teamStrength, bool isHome)
     {
         var baseChance = teamStrength / 100.0;
-        var weights = new[] { 1.0, 1.0, 0.8, 0.6, 0.4 };
-        var adjustedWeights = weights.Select(w => w * baseChance).ToArray();
+        var adjustedChance = isHome ? baseChance * HomeAdvantage : baseChance * AwayDisadvantage;
+
+        var weights = new[] { 1.0, 1.0, 0.8, 0.6, 0.4, 0.3, 0.2 }; // Extended to allow for more goals
+        var adjustedWeights = weights.Select(w => w * adjustedChance).ToArray();
 
         var totalWeight = adjustedWeights.Sum();
         var randomValue = _random.NextDouble() * totalWeight;
