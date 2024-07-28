@@ -6,8 +6,8 @@ namespace TournamentSimulator.Core.Services;
 public class MatchSimulator : IMatchSimulator
 {
     private readonly Random _random = new();
-    private const double HomeAdvantage = 1.2; // 20% advantage for home team
-    private const double AwayDisadvantage = 0.9; // 10% disadvantage for away team
+    private const double HomeAdvantage = 1.3; // 30% advantage for home team
+    private const double AwayDisadvantage = 0.8; // 20% disadvantage for away team
 
     public Match SimulateMatch(Team homeTeam, Team awayTeam)
     {

@@ -11,3 +11,9 @@ TournamentSimulator.UnitTests/obj/
 
 TournamentSimulator.ConsoleApp/bin/
 TournamentSimulator.ConsoleApp/obj/
+
+.idea/
+
+.vs/
+
+TournamentSimulator.sln.DotSettings.user
