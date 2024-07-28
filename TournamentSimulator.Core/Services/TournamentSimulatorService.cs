@@ -13,7 +13,7 @@ public class TournamentSimulatorService(
     IValidator<Team> teamValidator)
     : ITournamentSimulatorService
 {
-    public TournamentSimulationResult SimulateGroup(int numberOfTeams)
+    public TournamentSimulationResult SimulateGroup(int numberOfTeams, int numberOfQualifiedTeams)
     {
         var teams = teamGenerator.GenerateTeams(numberOfTeams);
         ValidateTeams(teams);
@@ -23,7 +23,7 @@ public class TournamentSimulatorService(
 
         var simulatedGroup = groupSimulator.SimulateGroup(group);
 
-        return CreateSimulationResult(simulatedGroup);
+        return CreateSimulationResult(simulatedGroup, numberOfQualifiedTeams);
     }
 
     private void ValidateGroups(Group group)
@@ -45,7 +45,7 @@ public class TournamentSimulatorService(
         }
     }
 
-    private static TournamentSimulationResult CreateSimulationResult(Group simulatedGroup)
+    private static TournamentSimulationResult CreateSimulationResult(Group simulatedGroup, int numberOfQualifiedTeams)
     {
         var result = new TournamentSimulationResult();
 
@@ -68,7 +68,9 @@ public class TournamentSimulatorService(
                 GoalsFor = team.GoalsFor,
                 GoalsAgainst = team.GoalsAgainst
             }).ToList();
-
+        
+        result.QualifiedTeams = result.FinalResults.GetRange(0, Math.Min(numberOfQualifiedTeams, result.FinalResults.Count));
+        
         return result;
     }
 

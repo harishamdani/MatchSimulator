@@ -42,6 +42,7 @@ public class TournamentSimulatorServiceTests
     {
         // Arrange
         int numberOfTeams = 2;
+        int numberOfQualifiedTeams = 1;
         _mockTeamGenerator
             .Setup(x => x.GenerateTeams(numberOfTeams))
             .Returns(new EditableList<Team>()
@@ -54,7 +55,7 @@ public class TournamentSimulatorServiceTests
             .Returns(new ValidationResult(new[] { new ValidationFailure("Name", "Team name is required") }));
 
         // Act & Assert
-        Assert.Throws<ValidationException>(() => _service.SimulateGroup(numberOfTeams));
+        Assert.Throws<ValidationException>(() => _service.SimulateGroup(numberOfTeams, numberOfQualifiedTeams));
     }
 
     [Test]
@@ -62,6 +63,7 @@ public class TournamentSimulatorServiceTests
     {
         // Arrange
         int numberOfTeams = 2;
+        int numberOfQualifiedTeams = 1;
         _mockTeamGenerator
             .Setup(x => x.GenerateTeams(numberOfTeams))
             .Returns(new EditableList<Team>()
@@ -75,6 +77,6 @@ public class TournamentSimulatorServiceTests
             .Returns(new ValidationResult(new[] { new ValidationFailure("Teams", "A group must have at least two teams") }));
 
         // Act & Assert
-        Assert.Throws<ValidationException>(() => _service.SimulateGroup(numberOfTeams));
+        Assert.Throws<ValidationException>(() => _service.SimulateGroup(numberOfTeams, numberOfQualifiedTeams));
     }
 }

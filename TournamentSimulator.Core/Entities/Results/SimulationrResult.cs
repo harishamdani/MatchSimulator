@@ -4,6 +4,7 @@ public class TournamentSimulationResult
 {
     public List<RoundResult> Rounds { get; set; } = [];
     public List<TeamResult> FinalResults { get; set; } = [];
+    public List<TeamResult> QualifiedTeams { set; get; } = [];
 }
 
 public class RoundResult
